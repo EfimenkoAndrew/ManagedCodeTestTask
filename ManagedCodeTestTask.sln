@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB8A1193-70B2-4765-946B-FC7FA85366DA}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedCodeTestTask.Persistence", "src\ManagedCodeTestTask.Persistence\ManagedCodeTestTask.Persistence.csproj", "{2F22B980-C9D6-4B39-9BE3-5B5982051741}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedCodeTestTask.Infrastructure", "src\ManagedCodeTestTask.Infrastructure\ManagedCodeTestTask.Infrastructure.csproj", "{B60C03F9-0850-4D09-8382-5FF01BAB5DFC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E4F6122D-124E-408A-8796-288E7075D8BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{B60C03F9-0850-4D09-8382-5FF01BAB5DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B60C03F9-0850-4D09-8382-5FF01BAB5DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B60C03F9-0850-4D09-8382-5FF01BAB5DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4F6122D-124E-408A-8796-288E7075D8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4F6122D-124E-408A-8796-288E7075D8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4F6122D-124E-408A-8796-288E7075D8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4F6122D-124E-408A-8796-288E7075D8BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

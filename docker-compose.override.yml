@@ -1,0 +1,49 @@
+services:
+  managedcodetesttask.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - 4847:8080
+      - 4747:8081
+    env_file:
+      - .env
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      - app-networtk
+
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 1432:5432
+    env_file:
+      - .env
+    volumes:
+      - db-lib-data:/var/lib/postgresql/data/
+    networks:
+      - app-networtk
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
+      PGADMIN_DEFAULT_PASSWORD: strong-password
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - app-networtk
+
+networks:
+  app-networtk:
+    driver: bridge
+
+volumes:
+  db-lib-data:
+  pgadmin-data:

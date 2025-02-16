@@ -1,8 +1,9 @@
-﻿using ManagedCodeTestTask.Core.Domain.Transactions.Models;
+﻿using ManagedCodeTestTask.Core.Domain.Transactions.Data;
+using ManagedCodeTestTask.Core.Domain.Transactions.Models;
 
 namespace ManagedCodeTestTask.Core.Domain.Transactions.Common;
 
 public interface ITransactionsProvider
 {
-    IAsyncEnumerable<Transaction> GetTransactionsAsync();
+    IAsyncEnumerable<CreateTransactionData> GetTransactionsAsync(string filePath);
 }

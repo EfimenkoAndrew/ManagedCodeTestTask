@@ -42,10 +42,11 @@ public class Transaction
 
     public static Transaction Create(CreateTransactionData data)
     {
+
         return new Transaction(
             data.TransactionId,
             data.UserId,
-            data.Date,
+            data.Date.ToUniversalTime(),
             data.Amount,
             data.Category,
             data.Description,

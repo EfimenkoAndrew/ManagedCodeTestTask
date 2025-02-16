@@ -1,3 +1,5 @@
-﻿namespace ManagedCodeTestTask.Application.Domain.Transactions.Commands.ParseTransactions;
+﻿using MediatR;
 
-public record ParseTransactionsCommand();
+namespace ManagedCodeTestTask.Application.Domain.Transactions.Commands.ParseTransactions;
+
+public record ParseTransactionsCommand(string FilePath) : IRequest;

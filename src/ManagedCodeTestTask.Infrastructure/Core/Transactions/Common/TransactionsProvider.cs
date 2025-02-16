@@ -1,14 +1,28 @@
-﻿using ManagedCodeTestTask.Core.Domain.Transactions.Common;
+﻿using CsvHelper.Configuration;
+using CsvHelper;
+using ManagedCodeTestTask.Core.Domain.Transactions.Common;
 using ManagedCodeTestTask.Core.Domain.Transactions.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using System.Globalization;
+using ManagedCodeTestTask.Core.Domain.Transactions.Data;
 
 namespace ManagedCodeTestTask.Infrastructure.Core.Transactions.Common;
 
-public class TransactionsProvider(IOptions<string> options) : ITransactionsProvider
+public class TransactionsProvider() : ITransactionsProvider
 {
-    public IAsyncEnumerable<Transaction> GetTransactionsAsync()
+    public async IAsyncEnumerable<CreateTransactionData> GetTransactionsAsync(string filePath)
     {
-        throw new NotImplementedException();
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = true,
+        };
+        using var reader = new StreamReader(filePath);
+        using var csv = new CsvReader(reader, config);
+        while (await csv.ReadAsync())
+        {
+            var record = csv.GetRecord<CreateTransactionData>();
+            yield return record;
+        }
     }
 }

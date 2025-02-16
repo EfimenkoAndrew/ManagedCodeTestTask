@@ -1,3 +1,5 @@
-﻿namespace ManagedCodeTestTask.Application.Domain.Transactions.Queries.GetTransactionsAnalysis;
+﻿using MediatR;
 
-public record GetTransactionsAnalysisQuery();
+namespace ManagedCodeTestTask.Application.Domain.Transactions.Queries.GetTransactionsAnalysis;
+
+public record GetTransactionsAnalysisQuery() : IRequest<object>;

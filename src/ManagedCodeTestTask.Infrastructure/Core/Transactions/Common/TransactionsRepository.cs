@@ -2,7 +2,7 @@
 using ManagedCodeTestTask.Core.Domain.Transactions.Models;
 using ManagedCodeTestTask.Persistence.ManagedCodeTestTaskDb;
 
-namespace ManagedCodeTestTask.Infrastructure.Core.Transactions
+namespace ManagedCodeTestTask.Infrastructure.Core.Transactions.Common
 {
     internal class TransactionsRepository(ManagedCodeTestTaskDbContext dbContext) : ITransactionsRepository
     {

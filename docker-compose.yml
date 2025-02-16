@@ -1,0 +1,6 @@
+services:
+  managedcodetesttask.api:
+    image: ${DOCKER_REGISTRY-}managedcodetesttaskapi
+    build:
+      context: .
+      dockerfile: src/ManagedCodeTestTask.Api/Dockerfile
