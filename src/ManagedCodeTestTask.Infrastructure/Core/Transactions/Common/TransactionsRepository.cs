@@ -10,5 +10,10 @@ namespace ManagedCodeTestTask.Infrastructure.Core.Transactions.Common
         {
             dbContext.Transactions.Add(transaction);
         }
+
+        public void AddRange(Transaction[] transactions)
+        {
+            dbContext.Transactions.AddRange(transactions);
+        }
     }
 }

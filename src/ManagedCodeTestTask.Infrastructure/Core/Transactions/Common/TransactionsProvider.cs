@@ -21,8 +21,7 @@ public class TransactionsProvider() : ITransactionsProvider
         using var csv = new CsvReader(reader, config);
         while (await csv.ReadAsync())
         {
-            var record = csv.GetRecord<CreateTransactionData>();
-            yield return record;
+            yield return csv.GetRecord<CreateTransactionData>();
         }
     }
 }

@@ -15,18 +15,21 @@ public class ParseTransactionsCommandHandle(
     public async Task Handle(ParseTransactionsCommand command, CancellationToken cancellationToken)
     {
         ulong counter = 0;
+        var transactions = new List<Transaction>();
         await foreach (var transactionData
                        in 
                        transactionsProvider
                            .GetTransactionsAsync(command.FilePath)
                            .WithCancellation(cancellationToken))
         {
-            var transaction = Transaction.Create(transactionData);
-            transactionsRepository.Add(transaction);
+            transactions.Add(Transaction.Create(transactionData));
+            
             counter++;
             if (counter % 10_000 == 0)
             {
+                transactionsRepository.AddRange(transactions.ToArray());
                 await unitOfWork.SaveChangesAsync(cancellationToken);
+                transactions.Clear();
                 counter = 0;
             }
         }
