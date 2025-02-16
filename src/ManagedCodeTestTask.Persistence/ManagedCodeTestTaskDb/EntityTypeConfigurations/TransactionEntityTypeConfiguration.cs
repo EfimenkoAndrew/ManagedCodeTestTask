@@ -18,23 +18,19 @@ namespace ManagedCodeTestTask.Persistence.ManagedCodeTestTaskDb.EntityTypeConfig
             builder.Property(x => x.UserId)
                 .IsRequired();
 
-            builder.Property(x => x.Date)
-                .IsRequired();
+            builder.Property(x => x.Date);
 
             builder.Property(x => x.Amount)
                 .IsRequired();
 
             builder.Property(x => x.Category)
-                .HasMaxLength(20)
-                .IsRequired();
+                .HasMaxLength(50);
 
             builder.Property(x => x.Description)
-                .HasMaxLength(150)
-                .IsRequired();
+                .HasMaxLength(550);
 
             builder.Property(x => x.Merchant)
-                .HasMaxLength(150)
-                .IsRequired();
+                .HasMaxLength(550);
         }
     }
 }

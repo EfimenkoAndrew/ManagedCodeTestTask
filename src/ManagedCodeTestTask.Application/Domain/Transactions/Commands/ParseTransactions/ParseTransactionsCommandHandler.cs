@@ -24,9 +24,10 @@ public class ParseTransactionsCommandHandle(
             var transaction = Transaction.Create(transactionData);
             transactionsRepository.Add(transaction);
             counter++;
-            if (counter % 1000 == 0)
+            if (counter % 10_000 == 0)
             {
                 await unitOfWork.SaveChangesAsync(cancellationToken);
+                counter = 0;
             }
         }
         await unitOfWork.SaveChangesAsync(cancellationToken);
