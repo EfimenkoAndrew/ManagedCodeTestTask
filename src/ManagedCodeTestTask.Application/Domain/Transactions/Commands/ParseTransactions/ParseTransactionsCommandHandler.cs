@@ -33,6 +33,11 @@ public class ParseTransactionsCommandHandle(
                 counter = 0;
             }
         }
-        await unitOfWork.SaveChangesAsync(cancellationToken);
+
+        if (transactions.Any())
+        {
+            transactionsRepository.AddRange(transactions.ToArray());
+            await unitOfWork.SaveChangesAsync(cancellationToken);
+        }
     }
 }

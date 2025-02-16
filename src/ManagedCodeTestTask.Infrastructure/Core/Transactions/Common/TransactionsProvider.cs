@@ -6,10 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System.Globalization;
 using ManagedCodeTestTask.Core.Domain.Transactions.Data;
+using nietras.SeparatedValues;
 
 namespace ManagedCodeTestTask.Infrastructure.Core.Transactions.Common;
 
-public class TransactionsProvider() : ITransactionsProvider
+public class TransactionsProvider: ITransactionsProvider
 {
     public async IAsyncEnumerable<CreateTransactionData> GetTransactionsAsync(string filePath)
     {
