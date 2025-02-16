@@ -2,4 +2,4 @@
 
 namespace ManagedCodeTestTask.Application.Domain.Transactions.Queries.GetTransactionsAnalysis;
 
-public record GetTransactionsAnalysisQuery() : IRequest<object>;
+public record GetTransactionsAnalysisQuery(bool GenerateReport) : IRequest<TransactionsAnalysisDto>;

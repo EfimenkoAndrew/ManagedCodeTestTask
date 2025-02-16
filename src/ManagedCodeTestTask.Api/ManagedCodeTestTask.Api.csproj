@@ -34,12 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="transactions_10_thousand.csv">
+    <Content Include="transactions_10_thousand.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="transactions_2_million.csv">
+    </Content>
+    <Content Include="transactions_2_million.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
 
 </Project>

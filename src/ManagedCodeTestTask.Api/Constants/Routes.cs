@@ -1,4 +1,4 @@
-﻿namespace IdentityAndAccessManagement.Api.Constants;
+﻿namespace ManagedCodeTestTask.Api.Constants;
 
 public static class Routes
 {
